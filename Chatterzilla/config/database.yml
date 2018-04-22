@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: Chatterzilla_production
-  username: Chatterzilla
-  password: <%= ENV['CHATTERZILLA_DATABASE_PASSWORD'] %>
+  username: usuario
+  password: MAC0218
