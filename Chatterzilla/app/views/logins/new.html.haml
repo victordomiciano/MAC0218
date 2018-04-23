@@ -1,0 +1,7 @@
+%h1 Novo  Login
+=form_with  scope: :login, url: logins_path, local: true do |f|
+  =f.label :nome
+  =f.text_field :nome
+  =f.label :apelido
+  =f.text_field :apelido
+  =f.submit
