@@ -1,7 +1,15 @@
-%h1 Novo  Login
-=form_with  scope: :login, url: logins_path, local: true do |f|
-  =f.label :nome
-  =f.text_field :nome
-  =f.label :apelido
-  =f.text_field :apelido
-  =f.submit
+%h1 Novo Login
+=form_with  scope: :login , url: logins_path , local: true   do |f|
+  - if  @login.errors.any?
+    %ul
+      - @login.errors.full_messages.each do |msg|
+        %li= msg
+  %table
+    %tr
+      %td= f.label :nome
+      %td= f.text_field :nome
+    %tr
+      %td= f.label :apelido
+      %td= f.text_field :apelido
+      = f.submit
+= link_to  "Listagem", logins_path

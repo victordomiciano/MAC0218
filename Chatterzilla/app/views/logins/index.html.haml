@@ -1,3 +1,14 @@
-%h1  Logins  cadastrados
-- @logins.each do |ap|
-%p= "#{ap.nome}  ́e #{ap.apelido}"
+%h1  Logins cadastrados
+%table
+  %tr
+    %th Nome
+    %th Apelido
+    %th
+  - @logins.each do |ap|
+    %tr
+      %td= ap.nome
+      %td= ap.apelido
+      %td
+        = link_to  "Apagar", login_path(ap), method: :delete ,
+          data: {confirm: ’Certeza?’}
+= link_to  "Voltar", new_login_path
