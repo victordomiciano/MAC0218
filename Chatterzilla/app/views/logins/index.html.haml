@@ -1,4 +1,3 @@
-%h1  Logins cadastrados
 %table
   %tr
     %th Nome
@@ -10,5 +9,5 @@
       %td= ap.apelido
       %td
         = link_to  "Apagar", login_path(ap), method: :delete ,
-          data: {confirm: ’Certeza?’}
+          data: {confirm: "Certeza?"}
 = link_to  "Voltar", new_login_path

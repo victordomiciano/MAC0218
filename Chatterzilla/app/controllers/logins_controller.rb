@@ -29,7 +29,6 @@ class LoginsController < ApplicationController
   def  destroy
     @login = Login.find(params[:id])
     @login.destroy
-    redirect_to  @logins_path
   end
 
   private
