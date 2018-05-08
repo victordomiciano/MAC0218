@@ -1,8 +1,8 @@
 class CreateLogins < ActiveRecord::Migration[5.1]
   def change
-    create_table :logins do |t|
-      t.string :nome
-      t.string :apelido
+    create_table :users do |t|
+      t.string :login
+      t.string :password
 
       t.timestamps
     end
