@@ -85,3 +85,10 @@ rails s
 ## Manual de utilização
 
 O projeto contém por ora apenas a estrutura inicial do banco de dados, a aplicação ainda não pode ser utilizada.
+
+## Funcionalidades a serem implementadas
+
+* testes da aplicação
+* integrar tela de login com criação de conta
+* interface de chat
+* manipulação de grupos e contatos
