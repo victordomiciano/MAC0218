@@ -2,9 +2,11 @@
 
 Aplicação web no estilo do antigo Microsoft Messenger, onde os usuários criam suas contas, adicionam amigos e trocam mensagens instantâneas diretamente ou em grupos de conversa.
 
-Nome:	Mateus Agostinho dos Anjos			NUSP:	9298191
-		Victor Domiciano Mendonça					8641963
-		Nícolas Nogueira Lopes da Silva				9277541
+| Nome 							  |	NUSP    |
+|---------------------------------|---------|
+| Mateus Agostinho dos Anjos	  |	9298191 |
+| Victor Domiciano Mendonça		  |	8641963 |
+| Nícolas Nogueira Lopes da Silva |	9277541 |
 
 ## Dependências do projeto
 
