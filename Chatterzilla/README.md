@@ -1,8 +1,20 @@
 # Chatterzilla
 
+Aplicação web no estilo do antigo Microsoft Messenger, onde os usuários criam suas contas, adicionam amigos e trocam mensagens instantâneas diretamente ou em grupos de conversa.
+
+Nome:	Mateus Agostinho dos Anjos			NUSP:	9298191
+		Victor Domiciano Mendonça					8641963
+		Nícolas Nogueira Lopes da Silva				9277541
+
+## Dependências do projeto
+
+* Ruby v. 2.5.0
+* Rails v. 5.1.4
+* sqlite3
+
 ## Manual de instalação
 
-### Instalando dependências
+### Instalando dependências do Ruby
 
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -32,6 +44,8 @@ ruby -v
 ```
 
 ### Instalando bundler
+
+Bundler é um programa que garante que todas as bibliotecas necessárias para a aplicação estejam instaladas.
 
 ```
 gem install bundler
