@@ -1,11 +1,13 @@
 %table
   %tr
     %th Login
+    %th Email
     %th Password
     %th
   - @user.each do |ap|
     %tr
       %td= ap.login
+      %td= ap.email
       %td= ap.password
       %td
         = link_to  "Apagar", user_path(ap), method: :delete ,

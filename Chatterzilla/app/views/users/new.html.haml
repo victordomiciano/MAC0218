@@ -14,9 +14,13 @@
           %td= f.label :login
           %td= f.text_field :login
         %tr
+          %td= f.label :email
+          %td= f.text_field :email
+        %tr
           %td= f.label :password
           %td= f.text_field :password
           = f.submit
-      = link_to  "Lista Usuarios", users_path
+      = link_to  "Go Back to Log In", new_session_path
+
 #boxImage
   =image_tag "godzillaResized.jpg"
