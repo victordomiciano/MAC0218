@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to the user's show page.
       redirect_to sessions_path
     else
-      redirect_to new_session_path
+      render html: "Conta inexistente, favor criar uma conta!"
     end
   end
 

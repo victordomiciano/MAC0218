@@ -1,7 +1,9 @@
-%h1  Pronto!
-%p
-%i= @user.login
-Possui email:
-%i= @user.email
-%p
+- provide(:title, @user.name)
+.row
+  %aside.col-md-4
+    %section.user_info
+      %h1
+        = gravatar_for @user
+        = @user.login
+
 = link_to  "Voltar", new_user_path
