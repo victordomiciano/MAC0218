@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="844ae0a6-f070-484a-b88f-dc3e8a64f544" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Chatterzilla/app/assets/stylesheets/users.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Chatterzilla/app/assets/stylesheets/users.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chatterzilla/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Chatterzilla/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatterzilla/app/helpers/users_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Chatterzilla/app/helpers/users_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatterzilla/app/views/sessions/new.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/Chatterzilla/app/views/sessions/new.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatterzilla/app/views/users/new.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/Chatterzilla/app/views/users/new.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatterzilla/app/views/users/show.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/Chatterzilla/app/views/users/show.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chatterzilla/app/views/layouts/application.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/Chatterzilla/app/views/layouts/application.html.haml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,12 +13,39 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Chatterzilla/app/controllers/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Chatterzilla/app/views/layouts/application.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Chatterzilla/app/views/users/new.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Chatterzilla/app/assets/stylesheets/users.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="151" column="1" lean-forward="true" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
+            <state relative-caret-position="20">
+              <caret line="151" column="1" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -61,6 +85,7 @@
         <option value="$PROJECT_DIR$/Chatterzilla/app/assets/stylesheets/users.scss" />
         <option value="$PROJECT_DIR$/Chatterzilla/app/views/users/new.html.haml" />
         <option value="$PROJECT_DIR$/Chatterzilla/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/Chatterzilla/app/views/layouts/application.html.haml" />
       </list>
     </option>
   </component>
@@ -86,6 +111,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,7 +135,7 @@
               <item name="MAC0218" type="462c0819:PsiDirectoryNode" />
               <item name="Chatterzilla" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MAC0218" type="b2602c69:ProjectViewProjectNode" />
@@ -117,12 +143,12 @@
               <item name="Chatterzilla" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -166,18 +192,19 @@
       <workItem from="1526416761830" duration="2159000" />
       <workItem from="1526419232268" duration="3325000" />
       <workItem from="1527195730535" duration="4920000" />
-      <workItem from="1527274970471" duration="4856000" />
+      <workItem from="1527274970471" duration="4984000" />
+      <workItem from="1527530158503" duration="1239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23606000" />
+    <option name="totallyTimeSpent" value="24973000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25778133" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26177174" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -336,10 +363,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chatterzilla/app/controllers/users_controller.rb">
+    <entry file="file://$PROJECT_DIR$/Chatterzilla/app/views/shared/_error_messages.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -350,17 +377,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chatterzilla/app/views/shared/_error_messages.html.haml">
+    <entry file="file://$PROJECT_DIR$/Chatterzilla/app/assets/stylesheets/users.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="20">
+          <caret line="151" column="1" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chatterzilla/app/assets/stylesheets/users.scss">
+    <entry file="file://$PROJECT_DIR$/Chatterzilla/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="151" column="1" lean-forward="true" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
+        <state relative-caret-position="65">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chatterzilla/app/views/layouts/application.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
         </state>
       </provider>
     </entry>
