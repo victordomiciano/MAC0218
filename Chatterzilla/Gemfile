@@ -59,3 +59,6 @@ gem 'bootstrap-sass', '3.3.7'
 
 gem "haml"
 gem "haml-rails", :group => 'development'
+
+#For the session
+gem 'jquery-rails'
