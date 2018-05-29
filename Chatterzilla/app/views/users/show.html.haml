@@ -19,3 +19,7 @@
                   = link_to "Log out", logout_path, method: :delete
           - else
             %li= link_to "Log in", login_path
+    %th LOGIN:
+    %td= @user.login
+    %th EMAIL:
+    %td= @user.email
