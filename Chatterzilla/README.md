@@ -76,6 +76,13 @@ rake db:create
 rake db:migrate
 ```
 
+Obs.: Caso já tenha sido utilizado o projeto, será necessário executar o comando
+```
+rake db:drop
+```
+para deletar o banco de dados já existente.
+
+
 Inicializar servidor
 
 ```
@@ -84,11 +91,20 @@ rails s
 
 ## Manual de utilização
 
-O projeto contém por ora apenas a estrutura inicial do banco de dados, a aplicação ainda não pode ser utilizada.
+O projeto contém por ora apenas a estrutura inicial do banco de dados com a tabela de usuários, a aplicação já possui login, criação, edição e visualização dos usuários do sistema.
+
+## Testes
+
+No projeto ja foram incluídos os testes relacionados à implementação de usuários no sistema.
+
+Para rodar os testes
+
+```
+rails test
+```
 
 ## Funcionalidades a serem implementadas
 
-* testes da aplicação
-* integrar tela de login com criação de conta
 * interface de chat
 * manipulação de grupos e contatos
+* testes seguindo o TDD durante o processo de implementação de grupos e contatos

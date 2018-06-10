@@ -97,9 +97,10 @@
 %% PREPARE TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Documentação da Arquitetura do Projeto \\
-MAC0218 - Técnicas de Programação II}
+MAC0218 - Técnicas de Programação II\\
+Segunda Entrega}
 \author{Mateus Agostinho dos Anjos - 9298191\\Nícolas Nogueira Lopes da Silva - 9277541\\Victor Domiciano Mendonça - 8641963}
-\date{19 de maio de 2018}
+\date{10 de junho de 2018}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -112,7 +113,7 @@ MAC0218 - Técnicas de Programação II}
 \pagebreak
 
 \section{Introdução}
-Esta documentação fornece uma visão geral da arquitetura do sistema a ser implementado. Com a proposta e escopo da aplicação, requisitos funcionais e não-funcionais, além de diagramas de casos de uso.
+Esta documentação fornece uma visão geral da arquitetura do sistema a ser implementado. Com a proposta e escopo da aplicação, requisitos funcionais e não-funcionais, além de diagramas de casos de uso e do modelo de banco de dados implementado.
 
 \section{Projeto}
 \subsection{Propósito e Escopo}
@@ -142,8 +143,17 @@ O propósito desta aplicação é permitir com que usuários possam interagir co
 \subsection{Requisitos não funcionais}
 \begin{itemize}
 \item O aplicativo precisa possuir uma interface amigável ao usuário, como todo bom chat deve possuir.
-\item A privacidade dos usuários é respeitada, as mensagens entre dois usuários devem ser encriptadas para preservar a privacidade dos mesmos.
+\item A privacidade dos usuários é respeitada, as mensagens entre dois usuários não são armazenadas no banco de dados, como num web chat as mensagens são voláteis.
 \end{itemize}
+
+\section{Banco de Dados}
+
+O modelo de banco de dados ainda não foi totalmente implementado, mas a base de usuários já está funcionando, faltando apenas implementar a parte de contatos e grupos.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.8]{img/userstable.jpeg}
+	\caption{Tabela de \textit{Users} do Banco de Dados}
+\end{figure}
 
 \pagebreak
 \section{Diagrama de Casos de Uso}
