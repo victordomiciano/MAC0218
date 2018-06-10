@@ -1,9 +1,31 @@
 - provide(:title, 'Edit user')
 - provide(:button_text, 'Save changes')
-%h1 Update your profile
-.row
-  .col-md-6.col-md-offset-3
-    = render 'form'
-    .gravatar_edit
-      = gravatar_for @user
-      %a{:href => "http://gravatar.com/emails", :target => "_blank"} Change
+%body
+  %header.navbar.navbar-fixed-top.navbar-inverse
+    .container
+      = link_to "Chatterzilla", root_path, id: "logo"
+      %nav
+        %ul.nav.navbar-nav.navbar-right
+          %li= link_to "Home", root_path
+          - if logged_in?
+            %li= link_to "Users", users_path
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Account
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to "Profile", current_user
+                %li= link_to "Settings", edit_user_path(current_user)
+                %li.divider
+                %li
+                  = link_to "Log out", logout_path, method: :delete
+          - else
+            %li= link_to "Log in", login_path
+  .container
+    %h1 Update your profile
+    .row
+      .col-md-6.col-md-offset-3
+        = render 'form'
+        .gravatar_edit
+          = gravatar_for @user
+          %a{:href => "http://gravatar.com/emails", :target => "_blank"} Change

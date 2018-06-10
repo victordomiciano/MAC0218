@@ -19,8 +19,15 @@
                   = link_to "Log out", logout_path, method: :delete
           - else
             %li= link_to "Log in", login_path
-
-    %th LOGIN:
-    %td= @user.login
-    %th EMAIL:
-    %td= @user.email
+  .container
+    .row.align-items-center
+      .col.align-self-center
+        %h1 User profile
+    .row
+      .col-xs-6.align-self-center
+        %p
+          = @user.login
+        %p 
+          = @user.email
+      .col-xs-6.align-self-center
+        = gravatar_for @user
