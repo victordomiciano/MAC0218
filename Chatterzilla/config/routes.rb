@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'chats/show'
+
   get 'users/new'
 
   root   'sessions#new'
