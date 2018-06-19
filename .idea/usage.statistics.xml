@@ -6,7 +6,7 @@
         <counts>
           <entry key="haml" value="2" />
           <entry key="rb" value="2" />
-          <entry key="scss" value="1" />
+          <entry key="scss" value="2" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
@@ -14,7 +14,7 @@
         <counts>
           <entry key="Haml" value="2" />
           <entry key="Ruby" value="2" />
-          <entry key="SCSS" value="1" />
+          <entry key="SCSS" value="2" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
