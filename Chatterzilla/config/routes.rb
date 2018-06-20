@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   get 'chats/show'
-
   get 'users/new'
   mount ActionCable.server => '/cable'
 
-  root   'users#index'
+  root   'sessions#new'
   #root to: "chats#show"
   get    '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
