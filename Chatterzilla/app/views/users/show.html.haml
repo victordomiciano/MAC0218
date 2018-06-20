@@ -4,7 +4,7 @@
       = link_to "Chatterzilla", root_path, id: "logo"
       %nav
         %ul.nav.navbar-nav.navbar-right
-          %li= link_to "Home", current_user
+          %li= link_to "Home", root_path
           - if logged_in?
             %li= link_to "Users", users_path
             %li.dropdown
@@ -31,4 +31,4 @@
           = @user.email
       .col-xs-6.align-self-center
         = gravatar_for @user
-    
+    = link_to "Go to Chat Room!", "../chats/show"  
