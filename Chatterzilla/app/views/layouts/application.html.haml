@@ -1,12 +1,20 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => '#{= user_signed_in? ? current_user.login : ""}', :name => 'user-id'}/
     %title Chatterzilla
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    =render 'layouts/nav'
+
     .container
       - flash.each do |message_type, message|
         %div{:class => "alert alert-#{message_type}"}= message
+      - if alert
+        %div{:class => "alert alert-danger", :role => "alert"}= alert
+      - if notice
+        %div{:class => "alert alert-success", :role => "alert"}= notice
     = yield

@@ -13,6 +13,8 @@
 //= require jquery
 //= require bootstrap
 //= require rails-ujs
+//= require private_pub
+//= require chat
 //= require turbolinks
 //= require_tree .
 
