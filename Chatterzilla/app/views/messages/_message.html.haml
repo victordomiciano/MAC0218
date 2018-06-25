@@ -1,7 +1,3 @@
-%li{:class => "#{self_or_other(message)}"}
-    .avatar
-    .chatboxmessagecontent
-        %p
-            = message.body
-        %time{:datetime => 'message.created_at', :title => 'message.created_at.strftime()'}
-            = message_interlocutor(message).name • message.created_at.strftime('%H:%M %p')
+.message
+  %p
+    = message.content

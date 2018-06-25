@@ -65,6 +65,3 @@ gem "haml-rails", :group => 'development'
 
 #For the session
 gem 'jquery-rails'
-
-gem 'private_pub'
-gem 'thin'

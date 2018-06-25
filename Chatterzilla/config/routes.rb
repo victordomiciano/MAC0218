@@ -12,7 +12,4 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :chats
-  resources :conversations do
-    resources :messages
-  end
 end
