@@ -1,31 +1,20 @@
 - provide(:title, 'All users')
 %body
-  %header.navbar.navbar-fixed-top.navbar-inverse
-    .container
-      = link_to "Chatterzilla", root_path, id: "logo"
-      %nav
-        %ul.nav.navbar-nav.navbar-right
-          %li= link_to "Home", root_path
-          - if logged_in?
-            %li= link_to "Users", users_path
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Account
-                %b.caret
-              %ul.dropdown-menu
-                %li= link_to "Profile", current_user
-                %li= link_to "Settings", edit_user_path(current_user)
-                %li.divider
+  .containerusers
+    .row
+      .col-xs-6.align-self-center
+        %h1 All users  
+        .panel.panel-primary
+          .panel-body
+            %ul.users
+              - @users.each do |user|
                 %li
-                  = link_to "Log out", logout_path, method: :delete
-          - else
-            %li= link_to "Log in", login_path
-  .container
-    %h1 All users
-    = will_paginate
-    %ul.users
-      - @users.each do |user|
-        %li
-          = gravatar_for user, size: 50
-          = link_to user.login, user
-    = will_paginate
+                  = gravatar_for user, size: 50
+                  = link_to "Open chat with " + user.login, conversations_path(user_id: user), remote: true, method: :post 
+                  %br/ 
+                  = link_to "Profile", user 
+      .col-xs-9.align-self-start
+        %h1 My conversations
+        %ul.users#conversations-list
+          - @conversations.each do |conversation|
+            = render 'conversations/conversation', conversation: conversation, user: current_user

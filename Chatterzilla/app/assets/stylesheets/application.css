@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+.messages-list {
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+
+.message-sent {
+  position: relative !important;
+  background-color: #D9EDF7 !important;
+  border-color: #BCE8F1 !important;
+  margin: 5px 20px !important;
+  padding: 10px !important;
+  float: right !important;
+}
+
+
+.message-received {
+  background-color: #F1F0F0 !important;
+  border-color: #EEEEEE !important;
+  margin: 5px 20px !important;
+  padding: 10px !important;
+  float: left !important;
+}

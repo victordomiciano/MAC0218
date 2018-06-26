@@ -3,7 +3,12 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def index
+    session[:conversations] ||= []
+
     @users = User.paginate(page: params[:page])
+
+    @conversations = Conversation.includes(:recipient, :messages)
+                                 .find(session[:conversations])
   end
 
   def create
