@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     session[:conversations] ||= []
 
-    @users = User.paginate(page: params[:page])
+    @users = User.all.where.not(id: current_user).paginate(page: params[:page])
 
     @conversations = Conversation.includes(:recipient, :messages)
                                  .find(session[:conversations])
