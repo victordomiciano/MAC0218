@@ -98,9 +98,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Documentação da Arquitetura do Projeto \\
 MAC0218 - Técnicas de Programação II\\
-Segunda Entrega}
+Última Entrega}
 \author{Mateus Agostinho dos Anjos - 9298191\\Nícolas Nogueira Lopes da Silva - 9277541\\Victor Domiciano Mendonça - 8641963}
-\date{10 de junho de 2018}
+\date{30 de junho de 2018}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -117,7 +117,7 @@ Esta documentação fornece uma visão geral da arquitetura do sistema a ser imp
 
 \section{Projeto}
 \subsection{Propósito e Escopo}
-O propósito desta aplicação é permitir com que usuários possam interagir com o envio de mensagens instantâneas como uma aplicação de chat. Os usuários vão poder se comunicar usuário para usuário e de usuário para um grupo de conversa de usuários, de forma semelhante ao que o antigo Microsoft Messenger funcionava. A aplicação será escrita em Ruby com utilização do Rails e todos os aspectos da aplicação serão desenvolvidos e testados.
+O propósito desta aplicação é permitir com que usuários possam interagir com o envio de mensagens instantâneas como uma aplicação de chat. Os usuários vão poder se comunicar usuário para usuário, de forma semelhante a de um Web Chat, onde existe uma lista de usuários públicas e eles conversam entre si. A aplicação será escrita em Ruby com utilização do Rails e todos os aspectos da aplicação serão desenvolvidos e testados.
 \subsection{Dependências do sistema}
 \begin{itemize}
 \item Ruby v. 2.5.0
@@ -126,63 +126,57 @@ O propósito desta aplicação é permitir com que usuários possam interagir co
 \end{itemize}
 \subsection{Requisitos funcionais}
 \begin{itemize}
-\item Uma conta de usuário possui obrigatóriamente um email e uma senha vinculados.
-\item Cada usuário possui uma conta com: um perfil, um status, lista de contatos e uma lista de grupos onde possui um nível de permissão de acesso para cada um deles.
-\item Um perfil de usuário possui obrigatoriamente um apelido único. Pode possuir uma imagem e uma descrição.
-\item Um status de usuário é um campo com opções predefinidas para a escolha do usuário.
-\item Usuários podem pedir permissão para adicionar outros usuários em sua lista de contatos através do perfil do usuário em questão.
-\item Perfis de usuários podem ser encontrados pela barra de pesquisa localizada na página principal do aplicativo.
-\item Usuários podem trocar mensagens instantâneas com outros usuários que estejam em sua lista de contatos (e não estejam bloqueados) ou em grupos em que ele faça parte.
-\item Um usuário pode bloquear/desbloquear a comunicação com outros usuários que estejam em sua lista de amigos.
-\item Um grupo é criado por um usuário, que se torna dono do grupo.
-\item O dono de um grupo pode conceder privilégio de administrador a outros membros, assim como retirar o privilégio dos mesmos, além de poder remover quaisquer membros do grupo.
-\item O dono ou os administradores de um grupo podem enviar convite à um usuário para participar do grupo.
-\item Administradores podem conceder privilégio de administrador para outros membros, além de poder remover membros comuns do grupo.
+\item Uma conta de usuário possui obrigatóriamente um login, um email e uma senha vinculados.
+\item Cada usuário possui uma conta com: um perfil contendo seu login e seu email, possuindo acesso à lista de usuários pública para conversa. 
+\item Um perfil de usuário possui obrigatoriamente um apelido único. Pode possuir uma imagem vinculada com o email através do gravatar.
+\item Os perfis de usuários podem ser encontrados na lista pública de usuários.
+\item Usuários podem trocar mensagens com outros usuários através da lista de usuários.
 \item O aplicativo deve permitir o envio de mensagens de um usuário para um usuário que não esteja conectado no momento, a mensagem enviada deve aparecer para o destinatário quando este logar no sistema.
 \end{itemize}
 \subsection{Requisitos não funcionais}
 \begin{itemize}
 \item O aplicativo precisa possuir uma interface amigável ao usuário, como todo bom chat deve possuir.
-\item A privacidade dos usuários é respeitada, as mensagens entre dois usuários não são armazenadas no banco de dados, como num web chat as mensagens são voláteis.
 \end{itemize}
 
 \section{Banco de Dados}
 
-O modelo de banco de dados ainda não foi totalmente implementado, mas a base de usuários já está funcionando, faltando apenas implementar a parte de contatos e grupos.
+O modelo de banco de dados foi implementado, a base de usuários está funcionando, não implementamos a gerência de contatos e grupos originalmente pensada.
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.8]{img/userstable.jpeg}
-	\caption{Tabela de \textit{Users} do Banco de Dados}
+	\includegraphics[scale=0.7]{img/db.png}
+	\caption{Diagrama Entidade-Relacionamento do Banco de Dados}
 \end{figure}
-
 \pagebreak
-\section{Diagrama de Casos de Uso}
-\begin{figure}[!h]
+\section{Diagrama de Casos de Uso Antigo}
+Do projeto original, planejávamos fazer o sistema seguindo esses casos de uso.
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[scale=0.8]{img/casosautenticacao.png}
 	\caption{Diagrama de Casos de Uso do Sistema de Autenticação.}
 \end{figure}
-\begin{figure}[!h]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.8]{img/casosperfil.png}
 	\caption{Diagrama de Casos de Uso da Gerência de Perfil.}
 \end{figure}
-\begin{figure}[!h]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.8]{img/casosusuarios.png}
 	\caption{Diagrama de Casos de Uso da Gerência de Usuários.}
 \end{figure}
-\begin{figure}[!h]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.8]{img/casoschat.png}
 	\caption{Diagrama de Casos de Uso do Sistema de Chat/Conversas.}
 \end{figure}
-\begin{figure}[!h]
+\pagebreak
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.8]{img/casoscontatos.png}
 	\caption{Diagrama de Casos de Uso da Gerência de Contatos.}
 \end{figure}
-\begin{figure}[!h]
+\pagebreak
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.8]{img/casosgrupos.png}
 	\caption{Diagrama de Casos de Uso da Gerência de Grupos.}
