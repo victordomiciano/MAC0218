@@ -91,7 +91,7 @@ rails s
 
 ## Manual de utilização
 
-O projeto contém por ora apenas a estrutura inicial do banco de dados com a tabela de usuários, a aplicação já possui login, criação, edição e visualização dos usuários do sistema.
+Para logar é necessário criar uma conta utilizando o botão "Sign up now!". Criada a conta, para visualizar a lista de usuários basta clicar em Users na barra de navegação superior. Com a lista de usuários, basta clicar em "Open chat with" para abrir uma caixa de mensagens na parte direita, centralizado verticalmente na tela, assim é possível conversar com outro usuário (como o nosso chat não está em tempo real ainda, é necessário atualizar a página para visualizar possíveis novas mensagens vindas de outros usuários). 
 
 ## Testes
 
@@ -105,6 +105,6 @@ rails test
 
 ## Funcionalidades a serem implementadas
 
-* interface de chat
-* manipulação de grupos e contatos
-* testes seguindo o TDD durante o processo de implementação de grupos e contatos
+* chat em tempo real
+* implementar contatos
+* testes envolvendo o funcionamento do chat
