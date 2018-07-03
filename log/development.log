@@ -1,0 +1,2039 @@
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:13:27 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (87.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (65.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (89.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-18 14:14:38.957094"], ["updated_at", "2018-05-18 14:14:38.957094"]]
+  [1m[35m (52.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-05-18 11:14:54 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered users/new.html.haml within layouts/application (490.0ms)
+Completed 200 OK in 590ms (Views: 556.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-18 11:15:23 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-05-18 11:15:26 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered users/new.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-05-18 11:15:33 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ti7eSFzWxOj/SylJPrGaWjBuC3/bT66K4FyYwj7zbxZQhHtJhdQ5czGLNM0RTcdtvfudvCsUqTTacUfvGgxS6A==", "commit"=>"Save User", "user"=>{"login"=>"fritz", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("login", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["login", "fritz"], ["password", "aehoo"], ["created_at", "2018-05-18 14:15:33.690751"], ["updated_at", "2018-05-18 14:15:33.690751"]]
+  [1m[35m (256.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 261ms (ActiveRecord: 256.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-18 11:15:33 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  Rendered users/show.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 65ms (Views: 39.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-05-18 11:15:37 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered users/new.html.haml within layouts/application (9.9ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-18 11:15:39 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-05-18 11:15:43 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"owe5GqUK29ZppVbUZCqF1ktwP+7tTgxHPunGEB1cMAdFrRwbfAgmTadlS1BL1tjhxuWpLR0VC/kExBk9OaMN+Q==", "commit"=>"Save User", "user"=>{"login"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.haml within layouts/application
+  Rendered users/new.html.haml within layouts/application (8.5ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-18 11:15:59 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-05-18 11:16:02 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered users/new.html.haml within layouts/application (11.9ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-24 22:07:32 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (33.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (123.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (81.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-05-24 22:08:08 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (79.9ms)
+Completed 200 OK in 1080ms (Views: 1073.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-05-24 22:08:21 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered users/new.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 67ms (Views: 29.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-05-24 22:08:25 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 52ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-05-24 22:08:34 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3GkBh3GGeji/9Y7+RWrbLAXZM73xRje+1U0uNJN5xUpu6OYYkmHZxDSxphvJypgIblCvzgNSQFR+xXgrNTd0wA==", "session"=>{"login"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.email: SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-05-24 22:08:58 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3GkBh3GGeji/9Y7+RWrbLAXZM73xRje+1U0uNJN5xUpu6OYYkmHZxDSxphvJypgIblCvzgNSQFR+xXgrNTd0wA==", "session"=>{"login"=>"a", "email"=>"a@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.email: SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-05-24 22:09:25 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3GkBh3GGeji/9Y7+RWrbLAXZM73xRje+1U0uNJN5xUpu6OYYkmHZxDSxphvJypgIblCvzgNSQFR+xXgrNTd0wA==", "session"=>{"login"=>"bobdude", "email"=>"bobdude@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bobdude@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.email: SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/signup" for 127.0.0.1 at 2018-05-24 22:09:33 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered users/new.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-05-24 22:09:54 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2X4nn/e333g9bVoDOTQm7qZLJlNPP70ik5NR+bzOgHg/1IKeLrUi4/OtR4cWyHvZK96wkL9kupypvo7UmDG9hg==", "commit"=>"Save User", "user"=>{"login"=>"bobdude", "email"=>"bobdude@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'email' for User.):
+  
+app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (29.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-06-03 13:51:31 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3433.7ms)
+Completed 200 OK in 3551ms (Views: 3543.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-03 13:52:23 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (1.7ms)
+  Rendered users/new.html.haml within layouts/application (44.3ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x00007f22d00cce80>):
+     7:       = f.label :login
+     8:       = f.text_field :login, class: 'form-control'
+     9:       = f.label :email
+    10:       = f.email_field :email, class: 'form-control'
+    11:       = f.label :password
+    12:       = f.password_field :password, class: 'form-control'
+    13:       = f.label :password_confirmation, "Confirmation"
+  
+app/views/users/new.html.haml:10:in `block in _app_views_users_new_html_haml___3600858360616913498_69893748319760'
+app/views/users/new.html.haml:5:in `_app_views_users_new_html_haml___3600858360616913498_69893748319760'
+Started GET "/" for 127.0.0.1 at 2018-06-03 13:52:29 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (6.2ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-03 13:52:44 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VVnguHPc5azECBHx7ciW9N3MEBO8+IYLY93NNKWMAw+EYms7wqAtPd8NVQp0u1gijdE9P8YktayOTECc8sOtOg==", "session"=>{"login"=>"fritz", "email"=>"fritz@gmal.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fritz@gmal.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.email: SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/" for 127.0.0.1 at 2018-06-07 21:56:03 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (2577.3ms)
+Completed 200 OK in 2747ms (Views: 2734.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-07 21:57:57 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ldMRdA+8qnFsNrS+I7LwJ/0LgDhGCqWb3fqTRNLy4M9E6Jr3vsBi4Hcz8EW6wT7xrRatFDzWljwwax7shb1O+g==", "session"=>{"login"=>"bobdude", "email"=>"bobdude@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bobdude@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.email: SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/signup" for 127.0.0.1 at 2018-06-07 21:58:13 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (2.7ms)
+  Rendered users/_form.html.haml (20.1ms)
+  Rendered users/new.html.haml within layouts/application (23.4ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x00007f180c0b69d8>):
+    3:   = f.label :login
+    4:   = f.text_field :login, class: 'form-control'
+    5:   = f.label :email
+    6:   = f.email_field :email, class: 'form-control'
+    7:   = f.label :password
+    8:   = f.password_field :password, class: 'form-control'
+    9:   = f.label :password_confirmation
+  
+app/views/users/_form.html.haml:6:in `block in _app_views_users__form_html_haml__3598897259180639711_69870629385500'
+app/views/users/_form.html.haml:1:in `_app_views_users__form_html_haml__3598897259180639711_69870629385500'
+app/views/users/new.html.haml:6:in `_app_views_users_new_html_haml__4132892130251878542_69870629250080'
+Started GET "/" for 127.0.0.1 at 2018-06-07 21:58:19 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-07 22:00:17 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m0qDT9aq6FGVyR4gQZ7OzYPTlbY9YIJ3bhHHF040gX1KcQjMZ9YgwI7MWtvY7QAb0864mke8sdCDgEq/GXsvSA==", "session"=>{"login"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.email: SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/" for 127.0.0.1 at 2018-06-07 22:00:21 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 53ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-07 22:00:21 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (4.7ms)
+  Rendered users/_form.html.haml (20.2ms)
+  Rendered users/new.html.haml within layouts/application (25.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x00007f1800070cc8>):
+    3:   = f.label :login
+    4:   = f.text_field :login, class: 'form-control'
+    5:   = f.label :email
+    6:   = f.email_field :email, class: 'form-control'
+    7:   = f.label :password
+    8:   = f.password_field :password, class: 'form-control'
+    9:   = f.label :password_confirmation
+  
+app/views/users/_form.html.haml:6:in `block in _app_views_users__form_html_haml__3598897259180639711_69870561753420'
+app/views/users/_form.html.haml:1:in `_app_views_users__form_html_haml__3598897259180639711_69870561753420'
+app/views/users/new.html.haml:6:in `_app_views_users_new_html_haml__4132892130251878542_69870561712320'
+Started GET "/" for 127.0.0.1 at 2018-06-07 22:00:23 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (26.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-06-07 22:01:24 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (157.2ms)
+Completed 200 OK in 225ms (Views: 217.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-07 22:01:26 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (6.3ms)
+  Rendered users/_form.html.haml (28.0ms)
+  Rendered users/new.html.haml within layouts/application (33.0ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x0000559b46b11f98>):
+    3:   = f.label :login
+    4:   = f.text_field :login, class: 'form-control'
+    5:   = f.label :email
+    6:   = f.email_field :email, class: 'form-control'
+    7:   = f.label :password
+    8:   = f.password_field :password, class: 'form-control'
+    9:   = f.label :password_confirmation
+  
+app/views/users/_form.html.haml:6:in `block in _app_views_users__form_html_haml__2314934728977695159_70098063837320'
+app/views/users/_form.html.haml:1:in `_app_views_users__form_html_haml__2314934728977695159_70098063837320'
+app/views/users/new.html.haml:6:in `_app_views_users_new_html_haml__1767462616411778103_47062698189000'
+Started GET "/" for 127.0.0.1 at 2018-06-07 22:01:34 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-07 22:03:45 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (148.9ms)
+Completed 200 OK in 219ms (Views: 211.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-07 22:03:48 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (4.4ms)
+  Rendered users/_form.html.haml (24.3ms)
+  Rendered users/new.html.haml within layouts/application (29.1ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x000055e5b21d7610>):
+    3:   = f.label :login
+    4:   = f.text_field :login, class: 'form-control'
+    5:   = f.label :email
+    6:   = f.email_field :email, class: 'form-control'
+    7:   = f.label :password
+    8:   = f.password_field :password, class: 'form-control'
+    9:   = f.label :password_confirmation
+  
+app/views/users/_form.html.haml:6:in `block in _app_views_users__form_html_haml__1500967993091084685_70073166251600'
+app/views/users/_form.html.haml:1:in `_app_views_users__form_html_haml__1500967993091084685_70073166251600'
+app/views/users/new.html.haml:6:in `_app_views_users_new_html_haml__4492519494705062396_47222514300880'
+Started GET "/" for 127.0.0.1 at 2018-06-07 22:03:56 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-07 22:04:11 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (2.2ms)
+  Rendered users/_form.html.haml (10.9ms)
+  Rendered users/new.html.haml within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x00007f765d39d638>):
+    3:   = f.label :login
+    4:   = f.text_field :login, class: 'form-control'
+    5:   = f.label :email
+    6:   = f.email_field :email, class: 'form-control'
+    7:   = f.label :password
+    8:   = f.password_field :password, class: 'form-control'
+    9:   = f.label :password_confirmation
+  
+app/views/users/_form.html.haml:6:in `block in _app_views_users__form_html_haml__1500967993091084685_70073173018320'
+app/views/users/_form.html.haml:1:in `_app_views_users__form_html_haml__1500967993091084685_70073173018320'
+app/views/users/new.html.haml:6:in `_app_views_users_new_html_haml__4492519494705062396_70073173447140'
+Started GET "/" for 127.0.0.1 at 2018-06-07 22:04:45 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (152.7ms)
+Completed 200 OK in 223ms (Views: 215.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-07 22:05:08 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (6.5ms)
+  Rendered users/_form.html.haml (25.6ms)
+  Rendered users/new.html.haml within layouts/application (30.9ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x000055f895cf7338>):
+    3:   = f.label :login
+    4:   = f.text_field :login, class: 'form-control'
+    5:   = f.label :email
+    6:   = f.email_field :email, class: 'form-control'
+    7:   = f.label :password
+    8:   = f.password_field :password, class: 'form-control'
+    9:   = f.label :password_confirmation
+  
+app/views/users/_form.html.haml:6:in `block in _app_views_users__form_html_haml___752936923996160972_70256474520580'
+app/views/users/_form.html.haml:1:in `_app_views_users__form_html_haml___752936923996160972_70256474520580'
+app/views/users/new.html.haml:6:in `_app_views_users_new_html_haml__505849646323856524_47263079133960'
+Started GET "/signup" for 127.0.0.1 at 2018-06-07 22:08:48 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (2.1ms)
+  Rendered users/_form.html.haml (17.6ms)
+  Rendered users/new.html.haml within layouts/application (25.3ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x00007fa648af75d0>):
+    3:   = f.label :login
+    4:   = f.text_field :login, class: 'form-control'
+    5:   = f.label :email
+    6:   = f.email_field :email, class: 'form-control'
+    7:   = f.label :password
+    8:   = f.password_field :password, class: 'form-control'
+    9:   = f.label :password_confirmation
+  
+app/views/users/_form.html.haml:6:in `block in _app_views_users__form_html_haml___50294761518336481_70176080811460'
+app/views/users/_form.html.haml:1:in `_app_views_users__form_html_haml___50294761518336481_70176080811460'
+app/views/users/new.html.haml:6:in `_app_views_users_new_html_haml__3019001993689281564_70176080592000'
+Started GET "/signup" for 127.0.0.1 at 2018-06-07 22:08:52 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (2.0ms)
+  Rendered users/_form.html.haml (10.9ms)
+  Rendered users/new.html.haml within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x00007fa648edaa80>):
+    3:   = f.label :login
+    4:   = f.text_field :login, class: 'form-control'
+    5:   = f.label :email
+    6:   = f.email_field :email, class: 'form-control'
+    7:   = f.label :password
+    8:   = f.password_field :password, class: 'form-control'
+    9:   = f.label :password_confirmation
+  
+app/views/users/_form.html.haml:6:in `block in _app_views_users__form_html_haml___50294761518336481_70176082253220'
+app/views/users/_form.html.haml:1:in `_app_views_users__form_html_haml___50294761518336481_70176082253220'
+app/views/users/new.html.haml:6:in `_app_views_users_new_html_haml__3019001993689281564_70176082414260'
+Started GET "/" for 127.0.0.1 at 2018-06-07 22:08:54 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (223.3ms)
+Completed 200 OK in 285ms (Views: 283.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-07 22:14:17 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6eTA4CFrvLjZZwobFaxRSTmH0F1iyY8pmJgHJyjv8lM430tjkBd0KcJiTuCM35+faZr9cRgVvI51CYqPf6BcZg==", "session"=>{"login"=>"bobdude", "email"=>"bobdude@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bobdude@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.email: SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (33.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (111.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (76.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (88.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (92.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (50.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-09 19:37:18.225954"], ["updated_at", "2018-06-09 19:37:18.225954"]]
+  [1m[35m (82.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-06-09 16:37:35 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4795.3ms)
+Completed 200 OK in 5086ms (Views: 5056.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-09 16:37:45 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (2.5ms)
+  Rendered users/_form.html.haml (51.4ms)
+  Rendered users/new.html.haml within layouts/application (58.3ms)
+Completed 200 OK in 161ms (Views: 90.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-09 16:37:54 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (3.5ms)
+  Rendered users/_form.html.haml (11.2ms)
+  Rendered users/new.html.haml within layouts/application (14.2ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-09 16:38:44 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BVlEHtRvrf3snBxC7dFh72vGM6sCDoSePHG7dMDad+Bwq53enPsNbmRRcksw/Axun+Wq0VOauIsPurkyqNuQpQ==", "user"=>{"login"=>"bobdude", "email"=>"bobdude@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (21.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobdude@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (26.9ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "bobdude"], ["email", "bobdude@gmail.com"], ["created_at", "2018-06-09 19:38:45.144760"], ["updated_at", "2018-06-09 19:38:45.144760"], ["password_digest", "$2a$10$w4XwGTUClegu80pb1vLRnO39SNY.q9oyi8K5v/FA6jJ2C4DiCC1OS"]]
+  [1m[35m (159.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 392ms (ActiveRecord: 208.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-09 16:38:45 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (12.2ms)
+Completed 200 OK in 103ms (Views: 49.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-09 16:39:03 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (34.7ms)
+Completed 200 OK in 122ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-09 16:39:07 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 53ms (Views: 51.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-09 16:39:10 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (28.9ms)
+Completed 200 OK in 91ms (Views: 65.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-09 16:39:16 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-06-09 16:39:18 -0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (1.9ms)
+  Rendered users/_form.html.haml (7.6ms)
+  Rendered users/edit.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 78ms (Views: 54.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-09 16:39:35 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (8.7ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-09 16:39:42 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 105ms (Views: 101.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-09 16:39:58 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (9.9ms)
+Completed 200 OK in 529ms (Views: 527.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-09 16:39:59 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (3.1ms)
+  Rendered users/_form.html.haml (29.9ms)
+  Rendered users/new.html.haml within layouts/application (48.2ms)
+Completed 200 OK in 248ms (Views: 157.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-09 16:40:17 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GNUd5b9ghX2V0PJgLV0oQLpdMGYakT2TdReX9hXqQDttJ8Ql9/Ql7h0dnGnwcEXBTn6pHEsFAYZG3JWwfeunfg==", "user"=>{"login"=>"bobfella", "email"=>"bobfella@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (265.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (48.8ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "bobfella"], ["email", "bobfella@gmail.com"], ["created_at", "2018-06-09 19:40:18.268305"], ["updated_at", "2018-06-09 19:40:18.268305"], ["password_digest", "$2a$10$9xDbsNv7lgSORVVg7mEflu0Awe1z2FDyE8nr9dpCqiW.cifA76Ai."]]
+  [1m[35m (115.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 553ms (ActiveRecord: 430.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-06-09 16:40:18 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (19.2ms)
+Completed 200 OK in 101ms (Views: 59.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-09 16:40:52 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (122.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (77.8ms)
+Completed 200 OK in 1070ms (Views: 817.9ms | ActiveRecord: 122.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-09 16:40:55 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (9.6ms)
+Completed 200 OK in 128ms (Views: 105.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-09 16:40:59 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 254ms (Views: 251.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-06-09 16:41:00 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 186ms (Views: 182.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-09 16:41:03 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 73ms (Views: 70.6ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (120.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (109.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (102.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (121.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (93.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-12 16:50:37.148757"], ["updated_at", "2018-06-12 16:50:37.148757"]]
+  [1m[35m (71.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-06-12 13:50:55 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (724.6ms)
+Completed 200 OK in 1216ms (Views: 1196.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-12 13:50:59 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shared/_error_messages.html.haml (7.9ms)
+  Rendered users/_form.html.haml (24.9ms)
+  Rendered users/new.html.haml within layouts/application (72.9ms)
+Completed 200 OK in 146ms (Views: 127.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-12 13:51:30 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RDuI+nRLi4rzIqAPyR7xBUXeWnR5Ip8791RePn14GVAxyVE6PN8rGXvvzgYUM5yEsf3DDii2oy7En1x4FXn+FQ==", "user"=>{"login"=>"fritz", "email"=>"fritz@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "fritz@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shared/_error_messages.html.haml (3.6ms)
+  Rendered users/_form.html.haml (11.9ms)
+  Rendered users/new.html.haml within layouts/application (25.1ms)
+Completed 200 OK in 185ms (Views: 62.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-12 13:51:47 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8NflpS2WV+GOvcEtykEbAy/Zd0UU/4zHa8Ds7B9ky/Mh7G4mnOqfcJW4hdZTMtXVf8RaaW4jv2CGUWFESCtlxg==", "user"=>{"login"=>"fritz", "email"=>"fritz@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "fritz@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "fritz"], ["email", "fritz@gmail.com"], ["created_at", "2018-06-12 16:51:47.717061"], ["updated_at", "2018-06-12 16:51:47.717061"], ["password_digest", "$2a$10$8gBvF3F5cet2Cdc907VCAOv9RvYbp4cG87DQ25/th4q13LkTHdAv6"]]
+  [1m[35m (95.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 181ms (ActiveRecord: 96.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-12 13:51:47 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 50ms (Views: 33.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-12 13:51:54 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-12 13:51:58 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-12 13:52:01 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (10.7ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-06-12 13:52:04 -0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (2.3ms)
+  Rendered users/_form.html.haml (9.3ms)
+  Rendered users/edit.html.haml within layouts/application (18.2ms)
+Completed 200 OK in 60ms (Views: 55.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-06-12 13:52:11 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j2itfzT+2iRD1VFbdtUjJGH3/3KN19ETxPv22GHL5gleUyb8hYIStVjQFaDvpu3yMerSXvcL4rQpantwNoRIPA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-12 13:52:11 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-12 15:30:00 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (259.8ms)
+Completed 200 OK in 539ms (Views: 532.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-12 15:30:03 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_error_messages.html.haml (4.4ms)
+  Rendered users/_form.html.haml (10.0ms)
+  Rendered users/new.html.haml within layouts/application (31.2ms)
+Completed 200 OK in 105ms (Views: 80.3ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-12 15:30:08 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-12 15:30:08 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (12.7ms)
+Completed 200 OK in 63ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session" for 127.0.0.1 at 2018-06-12 15:30:13 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/session/new" for 127.0.0.1 at 2018-06-12 15:30:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/session/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sessions/new" for 127.0.0.1 at 2018-06-12 15:30:41 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (83.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (110.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (77.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (108.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (14.8ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (72.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-15 14:22:26.998774"], ["updated_at", "2018-06-15 14:22:26.998774"]]
+  [1m[35m (50.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobdude@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "bobdude"], ["email", "bobdude@gmail.com"], ["created_at", "2018-06-15 14:22:34.140368"], ["updated_at", "2018-06-15 14:22:34.140368"], ["password_digest", "$2a$10$/XDm/xcuRJ3RCOl5A5Pk8OgZBaR76I8ibrGuGuB/oqughGCTr8OSG"]]
+  [1m[35m (86.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobdude@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (143.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (88.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (93.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (86.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (63.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-15 14:24:27.772219"], ["updated_at", "2018-06-15 14:24:27.772219"]]
+  [1m[35m (50.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "bobfella"], ["email", "bobfella@gmail.com"], ["created_at", "2018-06-15 14:24:33.048745"], ["updated_at", "2018-06-15 14:24:33.048745"], ["password_digest", "$2a$10$MNbaGBBUv3jt/8ZoR3gwv.2iBLOf5w5xsGWUhtfway3aZo5lcgGf6"]]
+  [1m[35m (87.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (136.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (133.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (127.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (119.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (81.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-15 14:25:40.195394"], ["updated_at", "2018-06-15 14:25:40.195394"]]
+  [1m[35m (60.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "bobfella"], ["email", "bobfella@gmail.com"], ["created_at", "2018-06-15 14:25:44.077849"], ["updated_at", "2018-06-15 14:25:44.077849"], ["password_digest", "$2a$10$CcaFK1bx9l8oZEAXVvhiE.mJjwomoyzlvYwR5XLfVzbqOrQFqH3Qm"]]
+  [1m[35m (72.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (121.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (110.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (116.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (97.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (69.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-15 14:27:29.029942"], ["updated_at", "2018-06-15 14:27:29.029942"]]
+  [1m[35m (60.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "bobfella"], ["email", "bobfella@gmail.com"], ["created_at", "2018-06-15 14:27:32.498010"], ["updated_at", "2018-06-15 14:27:32.498010"], ["password_digest", "$2a$10$MCrws/V0CIHoTx3EOBfX.OxIwTehwin.4UYeA7KRyHvAZ8n0efMVq"]]
+  [1m[35m (65.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (113.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (99.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (106.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (97.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (68.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-15 14:29:28.769661"], ["updated_at", "2018-06-15 14:29:28.769661"]]
+  [1m[35m (60.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "bobfella"], ["email", "bobfella@gmail.com"], ["created_at", "2018-06-15 14:29:33.952584"], ["updated_at", "2018-06-15 14:29:33.952584"], ["password_digest", "$2a$10$2ZWXjgcB052LUmeogdzgCOHjNLW3zwzjtauLSxCb78rORUO2GRVOq"]]
+  [1m[35m (80.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (142.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (165.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180423203729)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180423203729"]]
+  [1m[35m (105.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20180524213629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213629"]]
+  [1m[35m (97.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20180524213859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180524213859"]]
+  [1m[35m (67.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-15 14:30:32.629102"], ["updated_at", "2018-06-15 14:30:32.629102"]]
+  [1m[35m (60.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "bobfella"], ["email", "bobfella@gmail.com"], ["created_at", "2018-06-15 14:30:35.909350"], ["updated_at", "2018-06-15 14:30:35.909350"], ["password_digest", "$2a$10$IpDJuYSXwsoFGfVQNQF2NuWdq7Alr8I.oPomjoLh1UTwm5sdieVgK"]]
+  [1m[35m (119.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-1@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Albertha Jacobi"], ["email", "bobfella-1@gmail.com"], ["created_at", "2018-06-15 14:30:36.441283"], ["updated_at", "2018-06-15 14:30:36.441283"], ["password_digest", "$2a$10$YNyo/TRRbSFkEEniQHdVx.jmpTRdPsGYlIlEqs7mFIggv/qYvf33S"]]
+  [1m[35m (87.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-2@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Ona Klein"], ["email", "bobfella-2@gmail.com"], ["created_at", "2018-06-15 14:30:36.607780"], ["updated_at", "2018-06-15 14:30:36.607780"], ["password_digest", "$2a$10$bBIs8LoBnPGbIqPM.EtYIO1pCF4mfS.V9LWpTE762Nrui9StQtafu"]]
+  [1m[35m (64.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-3@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Jazmin Wiegand DDS"], ["email", "bobfella-3@gmail.com"], ["created_at", "2018-06-15 14:30:36.751317"], ["updated_at", "2018-06-15 14:30:36.751317"], ["password_digest", "$2a$10$UptYO/T64AUND9Fj.J3Vc.6gzPgg/BrV1h/nwRto39/.aVy6N1x.e"]]
+  [1m[35m (65.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-4@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Mr. Jerel Kunze"], ["email", "bobfella-4@gmail.com"], ["created_at", "2018-06-15 14:30:36.895601"], ["updated_at", "2018-06-15 14:30:36.895601"], ["password_digest", "$2a$10$Y8VLIw4as/1rTHr8bYuy7.5QSmN4F1iiVCabpe5yQZTF2iL/Unywi"]]
+  [1m[35m (54.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-5@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Bobbie Ferry"], ["email", "bobfella-5@gmail.com"], ["created_at", "2018-06-15 14:30:37.030394"], ["updated_at", "2018-06-15 14:30:37.030394"], ["password_digest", "$2a$10$Red/mu40eLlzbOkgowiskuPJaZoGZBLBLxQmKfT0A9fL2lUrF5MAe"]]
+  [1m[35m (63.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-6@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Elton Herzog"], ["email", "bobfella-6@gmail.com"], ["created_at", "2018-06-15 14:30:37.178136"], ["updated_at", "2018-06-15 14:30:37.178136"], ["password_digest", "$2a$10$uhaEi99.MuJdhBQraH2mCu8khrl1mtnp1ADMxF.hR15ccJDK6AzHy"]]
+  [1m[35m (49.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-7@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Marisa Johns"], ["email", "bobfella-7@gmail.com"], ["created_at", "2018-06-15 14:30:37.305359"], ["updated_at", "2018-06-15 14:30:37.305359"], ["password_digest", "$2a$10$hCKotZRj/bLM776ndPeiC.piPJpvoWMpxdf0Fma/Tk.Cq868JhJuC"]]
+  [1m[35m (55.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-8@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "King Sawayn II"], ["email", "bobfella-8@gmail.com"], ["created_at", "2018-06-15 14:30:37.438638"], ["updated_at", "2018-06-15 14:30:37.438638"], ["password_digest", "$2a$10$xUX8vEF.xUtTxqmIUucJt.SNMxDxwbveiA5TlN8hM1DbQVPwTBCCS"]]
+  [1m[35m (54.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-9@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Scot Hamill"], ["email", "bobfella-9@gmail.com"], ["created_at", "2018-06-15 14:30:37.571875"], ["updated_at", "2018-06-15 14:30:37.571875"], ["password_digest", "$2a$10$OhNfqOJG0HCLeeP4vmtUcOSURxqFxQP4hrXmj1VMAhpkbukoKR.Gy"]]
+  [1m[35m (54.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-10@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Alta Upton DVM"], ["email", "bobfella-10@gmail.com"], ["created_at", "2018-06-15 14:30:37.705190"], ["updated_at", "2018-06-15 14:30:37.705190"], ["password_digest", "$2a$10$CSA2i5bUZ5iL3PaVs99leenftqG2tZGRUsVJgh6iGKRdUcn95TzF2"]]
+  [1m[35m (54.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-11@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Mrs. Reed Halvorson"], ["email", "bobfella-11@gmail.com"], ["created_at", "2018-06-15 14:30:37.837913"], ["updated_at", "2018-06-15 14:30:37.837913"], ["password_digest", "$2a$10$G9tVo4NowE5hFpnUTlK1SeoaZeozj/gR8LFdnGtbvSswG1ttdaylW"]]
+  [1m[35m (55.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-12@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Gloria Bernhard III"], ["email", "bobfella-12@gmail.com"], ["created_at", "2018-06-15 14:30:37.970995"], ["updated_at", "2018-06-15 14:30:37.970995"], ["password_digest", "$2a$10$6PPwOcMS9dK/9x.LnmcoEuFhUYmi7WUJuIH7Maf/wPyAMZBwj90x6"]]
+  [1m[35m (55.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-13@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Elinore Mosciski"], ["email", "bobfella-13@gmail.com"], ["created_at", "2018-06-15 14:30:38.104450"], ["updated_at", "2018-06-15 14:30:38.104450"], ["password_digest", "$2a$10$GGmSCLQYShcu.Y.xiAgwTub60RVaFv7PflQc5OtRVpz239K6Dqdke"]]
+  [1m[35m (65.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-14@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Barbara Connelly"], ["email", "bobfella-14@gmail.com"], ["created_at", "2018-06-15 14:30:38.248031"], ["updated_at", "2018-06-15 14:30:38.248031"], ["password_digest", "$2a$10$qjk7BTHExfKx4ll1lMqYKudng8DRYGU9Km7MR235x3esi60pbSn.e"]]
+  [1m[35m (55.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-15@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Darren Bashirian"], ["email", "bobfella-15@gmail.com"], ["created_at", "2018-06-15 14:30:38.381564"], ["updated_at", "2018-06-15 14:30:38.381564"], ["password_digest", "$2a$10$wCeeBh8tzNhxXdjNVG8ZL.oX00jpa2cqQOQOePeOB6TwDU2dn5XIi"]]
+  [1m[35m (55.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-16@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Miss Ayla Ankunding"], ["email", "bobfella-16@gmail.com"], ["created_at", "2018-06-15 14:30:38.515825"], ["updated_at", "2018-06-15 14:30:38.515825"], ["password_digest", "$2a$10$y8lRiVQazIjAPFupEQzps./JZPjB5HbvCVtG/n0MG.KsFY249HFzm"]]
+  [1m[35m (65.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-17@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Fiona Spinka"], ["email", "bobfella-17@gmail.com"], ["created_at", "2018-06-15 14:30:38.658930"], ["updated_at", "2018-06-15 14:30:38.658930"], ["password_digest", "$2a$10$RaTwyk7c7eIDVkjzPxPuyOg9iLyg0wj1gEhZaCnzW50xiR1L1m8um"]]
+  [1m[35m (55.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-18@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Duncan Nader"], ["email", "bobfella-18@gmail.com"], ["created_at", "2018-06-15 14:30:38.793863"], ["updated_at", "2018-06-15 14:30:38.793863"], ["password_digest", "$2a$10$cHKtoM1.E9egbN1qmcQ7v.Ix8yNXmDxezaLqg4a5AkYdwWDdyodVa"]]
+  [1m[35m (64.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-19@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Ms. Hester Kuhlman"], ["email", "bobfella-19@gmail.com"], ["created_at", "2018-06-15 14:30:38.936356"], ["updated_at", "2018-06-15 14:30:38.936356"], ["password_digest", "$2a$10$JCBsrNB9xbKVQdC7KAzrVOWtXc5QE6dufi0J4AcLrlB0OQihOHF8q"]]
+  [1m[35m (55.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-20@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Romaine Bechtelar"], ["email", "bobfella-20@gmail.com"], ["created_at", "2018-06-15 14:30:39.069285"], ["updated_at", "2018-06-15 14:30:39.069285"], ["password_digest", "$2a$10$Ro.wV.gsspSm.hCxWv/34.2R45waaUTCS3gtlN.cJ/yGsrxT96ZTy"]]
+  [1m[35m (55.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-21@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Christelle Gislason"], ["email", "bobfella-21@gmail.com"], ["created_at", "2018-06-15 14:30:39.202476"], ["updated_at", "2018-06-15 14:30:39.202476"], ["password_digest", "$2a$10$om57ATgGkZjz2WmCK2EnY.jw9890lFOK82yrDCC8RQnqPZJkERcli"]]
+  [1m[35m (55.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-22@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Declan Ebert"], ["email", "bobfella-22@gmail.com"], ["created_at", "2018-06-15 14:30:39.335617"], ["updated_at", "2018-06-15 14:30:39.335617"], ["password_digest", "$2a$10$gqivp5NJtpAA0KL3HGEMYeYPKvb2CfodanqD629db/Gm80jGia.qC"]]
+  [1m[35m (66.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-23@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Yvonne Murray"], ["email", "bobfella-23@gmail.com"], ["created_at", "2018-06-15 14:30:39.479335"], ["updated_at", "2018-06-15 14:30:39.479335"], ["password_digest", "$2a$10$AmBFp8M5q.h27F4b6wSkpeIR5rWgRBna1J.3UK0Buw1XnBWiIv6XC"]]
+  [1m[35m (55.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-24@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "King Ratke"], ["email", "bobfella-24@gmail.com"], ["created_at", "2018-06-15 14:30:39.613199"], ["updated_at", "2018-06-15 14:30:39.613199"], ["password_digest", "$2a$10$eCqY3VHHE3aVH2GoxrW53uqHzeZkqJj/Furwj8CJmCRK8pd9RpVvm"]]
+  [1m[35m (54.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-25@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Zechariah Ruecker"], ["email", "bobfella-25@gmail.com"], ["created_at", "2018-06-15 14:30:39.761385"], ["updated_at", "2018-06-15 14:30:39.761385"], ["password_digest", "$2a$10$CMNWjMQQnGoPiW0.plaPDu/U2plIThDP7W8dE5W7c5XtaU/svH9fO"]]
+  [1m[35m (103.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-26@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Athena Thompson"], ["email", "bobfella-26@gmail.com"], ["created_at", "2018-06-15 14:30:39.952294"], ["updated_at", "2018-06-15 14:30:39.952294"], ["password_digest", "$2a$10$5EWM5yOfDHX1fDYDIwaF8OKwmshUV8o5/o5GtdphC635N8bZHnV7e"]]
+  [1m[35m (81.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-27@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Marjory Welch Jr."], ["email", "bobfella-27@gmail.com"], ["created_at", "2018-06-15 14:30:40.112012"], ["updated_at", "2018-06-15 14:30:40.112012"], ["password_digest", "$2a$10$9rhGJYYFNXHWmwXav9IVleKrLG6JRE9dsWcxGXsBfNYGKRdImwGOW"]]
+  [1m[35m (66.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-28@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Cornell Kreiger"], ["email", "bobfella-28@gmail.com"], ["created_at", "2018-06-15 14:30:40.256773"], ["updated_at", "2018-06-15 14:30:40.256773"], ["password_digest", "$2a$10$KN1AONWPM2k8UJdu49evGOOR1KGZQlhTO5726UM0Uys86hxj7uKkG"]]
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-29@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Eliezer Goyette"], ["email", "bobfella-29@gmail.com"], ["created_at", "2018-06-15 14:30:40.412332"], ["updated_at", "2018-06-15 14:30:40.412332"], ["password_digest", "$2a$10$3YJ5jQcUSEU5isXaIRyEyu693P7.ZJHu6eR9vE6N9zePIaE91uB8O"]]
+  [1m[35m (76.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-30@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Verner Schoen"], ["email", "bobfella-30@gmail.com"], ["created_at", "2018-06-15 14:30:40.567168"], ["updated_at", "2018-06-15 14:30:40.567168"], ["password_digest", "$2a$10$KB0f0UyQCCRWbDN/2IESWuh1CEIvWBmU..kNIWvyhuDxyS6ursIi6"]]
+  [1m[35m (66.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-31@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Alberto Torp"], ["email", "bobfella-31@gmail.com"], ["created_at", "2018-06-15 14:30:40.711845"], ["updated_at", "2018-06-15 14:30:40.711845"], ["password_digest", "$2a$10$8cc.ZXjHAOOenOmjPloyAu1R8GGVHDMUhz5fwUmq9J5ChVIFZ1dGO"]]
+  [1m[35m (65.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-32@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Junius Lebsack"], ["email", "bobfella-32@gmail.com"], ["created_at", "2018-06-15 14:30:40.857035"], ["updated_at", "2018-06-15 14:30:40.857035"], ["password_digest", "$2a$10$U.7c/uI17h77BiVVienM9ewswY52F3e4cYRCUI0Z8i7rf79Q/3SdW"]]
+  [1m[35m (75.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-33@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Mr. Delores Monahan"], ["email", "bobfella-33@gmail.com"], ["created_at", "2018-06-15 14:30:41.010850"], ["updated_at", "2018-06-15 14:30:41.010850"], ["password_digest", "$2a$10$G08p/awVKFoGqvIoRs4NjuodtMp/8kpdrmav8LhPbqgK8K2JZdZMG"]]
+  [1m[35m (77.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-34@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Lila DuBuque"], ["email", "bobfella-34@gmail.com"], ["created_at", "2018-06-15 14:30:41.166450"], ["updated_at", "2018-06-15 14:30:41.166450"], ["password_digest", "$2a$10$TV3/a8Vl36mB4mIN9JdIKu5NtMn7ZAsH5EeV04.I0bwzCWaYaNFhm"]]
+  [1m[35m (65.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-35@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Gay Schiller PhD"], ["email", "bobfella-35@gmail.com"], ["created_at", "2018-06-15 14:30:41.310426"], ["updated_at", "2018-06-15 14:30:41.310426"], ["password_digest", "$2a$10$ZGuDMwGf4DeKU2hItPCUS.gy2/AsRLnyyS0GFY8bJZVomEVx0H8fS"]]
+  [1m[35m (66.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-36@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Nat Romaguera II"], ["email", "bobfella-36@gmail.com"], ["created_at", "2018-06-15 14:30:41.454998"], ["updated_at", "2018-06-15 14:30:41.454998"], ["password_digest", "$2a$10$KlmiXAHpUfDGiqjbf/Y46.NJlJs/ZDDs7HJN660gxtw0ZPml4W/FG"]]
+  [1m[35m (65.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-37@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Casper Hirthe"], ["email", "bobfella-37@gmail.com"], ["created_at", "2018-06-15 14:30:41.599027"], ["updated_at", "2018-06-15 14:30:41.599027"], ["password_digest", "$2a$10$4y.Bjec3IBswAIJizfgeq.WsjuLDMhbkeGdSfBQ4HGgWz5inCWpia"]]
+  [1m[35m (65.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-38@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Raheem Price"], ["email", "bobfella-38@gmail.com"], ["created_at", "2018-06-15 14:30:41.748007"], ["updated_at", "2018-06-15 14:30:41.748007"], ["password_digest", "$2a$10$OrYFeSEC5lEgka/4lRPWDOx0sFmfAAlNbjYgThdW4eHiVEU1T8G7e"]]
+  [1m[35m (61.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-39@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Erich Dibbert"], ["email", "bobfella-39@gmail.com"], ["created_at", "2018-06-15 14:30:41.888381"], ["updated_at", "2018-06-15 14:30:41.888381"], ["password_digest", "$2a$10$rvzv9jlx6d15J8yn5oGn4uPkHm7jdcKYkdlnEICyXgXNKqAUzpEEi"]]
+  [1m[35m (86.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-40@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Peggie Wuckert"], ["email", "bobfella-40@gmail.com"], ["created_at", "2018-06-15 14:30:42.053612"], ["updated_at", "2018-06-15 14:30:42.053612"], ["password_digest", "$2a$10$x33GcQdhM7HCatUMy02J9.LJdCE3UcqD49Uk10h/hOBEwN2B2ViJG"]]
+  [1m[35m (55.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-41@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Kathlyn Kozey Sr."], ["email", "bobfella-41@gmail.com"], ["created_at", "2018-06-15 14:30:42.187069"], ["updated_at", "2018-06-15 14:30:42.187069"], ["password_digest", "$2a$10$CWJ8vAGrcIXQVWtGP4WQc.Fl5Rn9RpN4LmpKqTIPERU5T8eUU6dS6"]]
+  [1m[35m (77.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-42@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Treva Hills"], ["email", "bobfella-42@gmail.com"], ["created_at", "2018-06-15 14:30:42.342042"], ["updated_at", "2018-06-15 14:30:42.342042"], ["password_digest", "$2a$10$3jCJ48iUS4EmMM0ctVfdme0Revub5lYrH0L37vV0Sx3ZMCuTaVG9K"]]
+  [1m[35m (66.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-43@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Jessyca Wiza"], ["email", "bobfella-43@gmail.com"], ["created_at", "2018-06-15 14:30:42.487134"], ["updated_at", "2018-06-15 14:30:42.487134"], ["password_digest", "$2a$10$kVLuwDW/ZJmMPoDm/KQk2u6ZKqAX8MtMd8A2Wfh.r45q.I/YDg3Y."]]
+  [1m[35m (65.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-44@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Augustine Wyman"], ["email", "bobfella-44@gmail.com"], ["created_at", "2018-06-15 14:30:42.630855"], ["updated_at", "2018-06-15 14:30:42.630855"], ["password_digest", "$2a$10$SiGgHuO03ITN22cR2sInuOMzU9AT7MzouIx5BlN/ztl5ZcnkVkLq."]]
+  [1m[35m (66.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-45@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Gino Corwin"], ["email", "bobfella-45@gmail.com"], ["created_at", "2018-06-15 14:30:42.774773"], ["updated_at", "2018-06-15 14:30:42.774773"], ["password_digest", "$2a$10$qR.5vLg7dc5V4RNnshKAFO.24hEIf3nyIw1HCQIJXTDA8QRwx4HwC"]]
+  [1m[35m (66.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-46@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Santa Gislason"], ["email", "bobfella-46@gmail.com"], ["created_at", "2018-06-15 14:30:42.919194"], ["updated_at", "2018-06-15 14:30:42.919194"], ["password_digest", "$2a$10$plNTXEh35nC86qZnov2sDOG2vltkWqv69R5Acs1Fp21PbmtAwg/cq"]]
+  [1m[35m (66.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-47@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Hilton Hermann"], ["email", "bobfella-47@gmail.com"], ["created_at", "2018-06-15 14:30:43.065221"], ["updated_at", "2018-06-15 14:30:43.065221"], ["password_digest", "$2a$10$Ow5k2gvgfIq7gnLJmpXgyOp59kyTEmLMBPOnXr7A6tuL7PqkBePeS"]]
+  [1m[35m (64.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-48@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Lenora Adams"], ["email", "bobfella-48@gmail.com"], ["created_at", "2018-06-15 14:30:43.210566"], ["updated_at", "2018-06-15 14:30:43.210566"], ["password_digest", "$2a$10$SAnHevUYGVSXDtV5sssRQOwj176Iz86t6HZkf6TDjaX08MjLr1d4G"]]
+  [1m[35m (63.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-49@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Dr. Kayla Veum"], ["email", "bobfella-49@gmail.com"], ["created_at", "2018-06-15 14:30:43.351840"], ["updated_at", "2018-06-15 14:30:43.351840"], ["password_digest", "$2a$10$UR.JJT5133XVIqn/11/Ls./p6gzsQlxK7MNM7cObEN34xZP92lzH."]]
+  [1m[35m (66.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-50@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Sydnee Nolan"], ["email", "bobfella-50@gmail.com"], ["created_at", "2018-06-15 14:30:43.496054"], ["updated_at", "2018-06-15 14:30:43.496054"], ["password_digest", "$2a$10$c4zUfw.zWKfNFKqtO.ND1.4WQEtIhfAXgn3b5HAPKjVyHS4NbmExS"]]
+  [1m[35m (96.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-51@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Nakia Donnelly"], ["email", "bobfella-51@gmail.com"], ["created_at", "2018-06-15 14:30:43.680003"], ["updated_at", "2018-06-15 14:30:43.680003"], ["password_digest", "$2a$10$tmJtmeJ1sWZWsU9KrPl//usv2TlH3zTnKB9o9zp3tS6QomuZnS18O"]]
+  [1m[35m (97.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-52@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Koby Boehm"], ["email", "bobfella-52@gmail.com"], ["created_at", "2018-06-15 14:30:43.856883"], ["updated_at", "2018-06-15 14:30:43.856883"], ["password_digest", "$2a$10$Gqu6qAWsxX7RaKchBqJCweaztTcINrmWZ8c1h5hOpbI6KyEIZ3E0e"]]
+  [1m[35m (98.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-53@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Benton Klein"], ["email", "bobfella-53@gmail.com"], ["created_at", "2018-06-15 14:30:44.034455"], ["updated_at", "2018-06-15 14:30:44.034455"], ["password_digest", "$2a$10$e4y50QavdWWwkpy/DmKQCul3CUCwfrfD7P.dFBqSIh38albgVGhsi"]]
+  [1m[35m (71.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-54@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Jerrold Corwin"], ["email", "bobfella-54@gmail.com"], ["created_at", "2018-06-15 14:30:44.183648"], ["updated_at", "2018-06-15 14:30:44.183648"], ["password_digest", "$2a$10$Cqk88ZJhoTvG5GCbh8r6vOGnUsKsrARwvtgYTZ0adk/s.17il3OiW"]]
+  [1m[35m (88.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-55@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Dejon Ziemann"], ["email", "bobfella-55@gmail.com"], ["created_at", "2018-06-15 14:30:44.350297"], ["updated_at", "2018-06-15 14:30:44.350297"], ["password_digest", "$2a$10$rOG.Iu4scGvWzBtXx3LwTu57ERQ9Ck4BZ3w75FLxXj0EPFl/bTodS"]]
+  [1m[35m (88.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-56@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Dr. Bart Maggio"], ["email", "bobfella-56@gmail.com"], ["created_at", "2018-06-15 14:30:44.516946"], ["updated_at", "2018-06-15 14:30:44.516946"], ["password_digest", "$2a$10$3hlOxzLwLNX4tERllMHl/ezoYA9Teen.9yB4i1DnG6U27uli2Sgo."]]
+  [1m[35m (88.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-57@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Carole Roberts"], ["email", "bobfella-57@gmail.com"], ["created_at", "2018-06-15 14:30:44.683218"], ["updated_at", "2018-06-15 14:30:44.683218"], ["password_digest", "$2a$10$/F1grZyg2mkZcUylQDEIGuReuCoK2DczQv0zXW4WZag1/crRzsDzq"]]
+  [1m[35m (88.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-58@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Felicity Roob"], ["email", "bobfella-58@gmail.com"], ["created_at", "2018-06-15 14:30:44.849762"], ["updated_at", "2018-06-15 14:30:44.849762"], ["password_digest", "$2a$10$1Z3iZx9TSM5le8VCo8/os.eW4sqhA2wVPEy1kSVJTVynRmkTasXwu"]]
+  [1m[35m (88.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-59@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Brock Schuppe"], ["email", "bobfella-59@gmail.com"], ["created_at", "2018-06-15 14:30:45.015978"], ["updated_at", "2018-06-15 14:30:45.015978"], ["password_digest", "$2a$10$nK4dxl/iU0ylfftSdolzI.XvENbVAO442gMPWHg.8GX0cPydBJmrm"]]
+  [1m[35m (88.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-60@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Santiago Turner IV"], ["email", "bobfella-60@gmail.com"], ["created_at", "2018-06-15 14:30:45.182247"], ["updated_at", "2018-06-15 14:30:45.182247"], ["password_digest", "$2a$10$uo5xidQuyddO6IU13nVBdeFN0/yh65gfkTgOP4zJUp5krr6iRHjIi"]]
+  [1m[35m (88.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-61@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Breanna Lynch I"], ["email", "bobfella-61@gmail.com"], ["created_at", "2018-06-15 14:30:45.348791"], ["updated_at", "2018-06-15 14:30:45.348791"], ["password_digest", "$2a$10$uC3UpHULKz4I8Mo68YCvWOAmkotrrzcmHwNINpUkoNSYkaFNK6VSe"]]
+  [1m[35m (88.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-62@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Dr. Trinity Wolf"], ["email", "bobfella-62@gmail.com"], ["created_at", "2018-06-15 14:30:45.515302"], ["updated_at", "2018-06-15 14:30:45.515302"], ["password_digest", "$2a$10$227CQIryFPgoHAC.c.PwXexnpOosvJe8kyvEpHLlQn4MIeGqHzOUa"]]
+  [1m[35m (88.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-63@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Karine Frami"], ["email", "bobfella-63@gmail.com"], ["created_at", "2018-06-15 14:30:45.681511"], ["updated_at", "2018-06-15 14:30:45.681511"], ["password_digest", "$2a$10$LBY2gVBy897sR3d.gwPkG.lA/NklHBhph1TE4um6bgqAkHlIjFOFS"]]
+  [1m[35m (88.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-64@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Mrs. Otis Gaylord"], ["email", "bobfella-64@gmail.com"], ["created_at", "2018-06-15 14:30:45.857602"], ["updated_at", "2018-06-15 14:30:45.857602"], ["password_digest", "$2a$10$gGzkwNOt6InbvqKV4n06rejWxkDROXQQS4SXznVBWpUz0b6ja2kJy"]]
+  [1m[35m (105.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-65@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Monserrat Gaylord"], ["email", "bobfella-65@gmail.com"], ["created_at", "2018-06-15 14:30:46.042171"], ["updated_at", "2018-06-15 14:30:46.042171"], ["password_digest", "$2a$10$pYEsJatyMLElbN.bNL2DAePtUXXl3NrlQM6uE32VLqBd4e.LHPUbS"]]
+  [1m[35m (71.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-66@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Imogene Kreiger PhD"], ["email", "bobfella-66@gmail.com"], ["created_at", "2018-06-15 14:30:46.192486"], ["updated_at", "2018-06-15 14:30:46.192486"], ["password_digest", "$2a$10$8hl5PyeUChPggnq6QDPGx.EKFOFpaEFT4jx0CiOt91kGOTtZGERhK"]]
+  [1m[35m (76.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-67@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Pete McKenzie"], ["email", "bobfella-67@gmail.com"], ["created_at", "2018-06-15 14:30:46.358449"], ["updated_at", "2018-06-15 14:30:46.358449"], ["password_digest", "$2a$10$YKCHqdoLFL3HwOdbrxQ2XuRdRxIRZMyQD3PcTBZJvnSmeifGpEMHy"]]
+  [1m[35m (110.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-68@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Dr. Alexander Erdman"], ["email", "bobfella-68@gmail.com"], ["created_at", "2018-06-15 14:30:46.547285"], ["updated_at", "2018-06-15 14:30:46.547285"], ["password_digest", "$2a$10$Nn5DzMMHbBPQhEHwxSFFW.mfz1C6QmMLrSUf2bonirMnMv5Y7yYFO"]]
+  [1m[35m (76.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-69@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Akeem Abbott"], ["email", "bobfella-69@gmail.com"], ["created_at", "2018-06-15 14:30:46.702271"], ["updated_at", "2018-06-15 14:30:46.702271"], ["password_digest", "$2a$10$dZNjMsIBLOlVT4Gz4VJ0QOfqKVRykt36K3IxfGfeE78PbluYgoOyi"]]
+  [1m[35m (77.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-70@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Teagan Schroeder"], ["email", "bobfella-70@gmail.com"], ["created_at", "2018-06-15 14:30:46.857611"], ["updated_at", "2018-06-15 14:30:46.857611"], ["password_digest", "$2a$10$BqB/UJIvkH/BdMCxmGc2Secy3znvalt3Yu3or4Glt.7dUwjAC.Sy2"]]
+  [1m[35m (77.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-71@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Alejandrin Klocko"], ["email", "bobfella-71@gmail.com"], ["created_at", "2018-06-15 14:30:47.013371"], ["updated_at", "2018-06-15 14:30:47.013371"], ["password_digest", "$2a$10$UGoKoJ.RM/4VxuMsbW9e0uGVmEEoCEqE/aGOzb187xAG2nVIfkIYu"]]
+  [1m[35m (76.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-72@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Kenyon Renner"], ["email", "bobfella-72@gmail.com"], ["created_at", "2018-06-15 14:30:47.169175"], ["updated_at", "2018-06-15 14:30:47.169175"], ["password_digest", "$2a$10$/OkxqL0/1DXFG3RzAkzhDeRUC8j2/t6gg0WMFq0HMR4xnxYkQ6DXK"]]
+  [1m[35m (76.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-73@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Easton Paucek II"], ["email", "bobfella-73@gmail.com"], ["created_at", "2018-06-15 14:30:47.324107"], ["updated_at", "2018-06-15 14:30:47.324107"], ["password_digest", "$2a$10$JdNuuGZVu66U/0xvNh6NAu2kRiF1LaFMjdf.93SLK736Bx4VBWcJa"]]
+  [1m[35m (76.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-74@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Lera Berge"], ["email", "bobfella-74@gmail.com"], ["created_at", "2018-06-15 14:30:47.478974"], ["updated_at", "2018-06-15 14:30:47.478974"], ["password_digest", "$2a$10$4agt2bU3vG1y8cHlG1rXz.01dDL5l.SdjtJchwgL02maidu7Sv7t."]]
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-75@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Miss Joy Auer"], ["email", "bobfella-75@gmail.com"], ["created_at", "2018-06-15 14:30:47.634190"], ["updated_at", "2018-06-15 14:30:47.634190"], ["password_digest", "$2a$10$fNule0XAOzI/1YuYUKsLBOe6lBI5QvsX38Y1iuqtMalUBB5tlmukS"]]
+  [1m[35m (96.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-76@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Dylan Eichmann"], ["email", "bobfella-76@gmail.com"], ["created_at", "2018-06-15 14:30:47.817908"], ["updated_at", "2018-06-15 14:30:47.817908"], ["password_digest", "$2a$10$Ck1QfoNrHKzdrj98l3Yav..qevgJ4jDdpnxKGcvk045S/kib9mpvq"]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-77@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Maud Weber"], ["email", "bobfella-77@gmail.com"], ["created_at", "2018-06-15 14:30:47.986360"], ["updated_at", "2018-06-15 14:30:47.986360"], ["password_digest", "$2a$10$UaUmb7zu4Wi3JE.22yC1I.NsmJaYdpdRfpHTK.XcvzkJh7Sb/6EA."]]
+  [1m[35m (68.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-78@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Mr. Sonya Boehm"], ["email", "bobfella-78@gmail.com"], ["created_at", "2018-06-15 14:30:48.133631"], ["updated_at", "2018-06-15 14:30:48.133631"], ["password_digest", "$2a$10$1uor1LsAILc5c3g1qEWvceN6hHFcCLUElO8bLexW0wujxSqUiBXyi"]]
+  [1m[35m (76.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-79@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Jermaine Heaney"], ["email", "bobfella-79@gmail.com"], ["created_at", "2018-06-15 14:30:48.288830"], ["updated_at", "2018-06-15 14:30:48.288830"], ["password_digest", "$2a$10$zsfHfX8LNoIy1XtpcurLsePiJZlbQpzgBa3QBOgRRMXgW8AUGGqnC"]]
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-80@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Ollie Dibbert"], ["email", "bobfella-80@gmail.com"], ["created_at", "2018-06-15 14:30:48.443899"], ["updated_at", "2018-06-15 14:30:48.443899"], ["password_digest", "$2a$10$WpMpT2qBXBuwkJ9VateKhOVNY1tf9LHqpPFETt20onp1oya2XNaeq"]]
+  [1m[35m (77.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-81@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Kade Buckridge PhD"], ["email", "bobfella-81@gmail.com"], ["created_at", "2018-06-15 14:30:48.599559"], ["updated_at", "2018-06-15 14:30:48.599559"], ["password_digest", "$2a$10$846kvM1DlkBjdkDSw7K4quR.NssMVR3cGgGaaGGRSSNiG0ooDAE6."]]
+  [1m[35m (88.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-82@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Clementine Pollich"], ["email", "bobfella-82@gmail.com"], ["created_at", "2018-06-15 14:30:48.766195"], ["updated_at", "2018-06-15 14:30:48.766195"], ["password_digest", "$2a$10$CZfQRZwfta5abJbkazv7yOu6vp.A4.7IHlnUDT5rUHRfW83lm4YBW"]]
+  [1m[35m (65.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-83@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Merlin Quigley"], ["email", "bobfella-83@gmail.com"], ["created_at", "2018-06-15 14:30:48.910015"], ["updated_at", "2018-06-15 14:30:48.910015"], ["password_digest", "$2a$10$J6o5PxSwXmFvQARD3o40Je5YsgIl0.dnbXj0wNZax4uYDKEDn4zSK"]]
+  [1m[35m (66.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-84@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Aurelie Flatley"], ["email", "bobfella-84@gmail.com"], ["created_at", "2018-06-15 14:30:49.056129"], ["updated_at", "2018-06-15 14:30:49.056129"], ["password_digest", "$2a$10$qkm3EorZTAVPX4xJjv9vU.Pyll02wepv7E82N20vHqVY4VlWYPR96"]]
+  [1m[35m (64.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-85@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Mr. Mckenzie Trantow"], ["email", "bobfella-85@gmail.com"], ["created_at", "2018-06-15 14:30:49.198390"], ["updated_at", "2018-06-15 14:30:49.198390"], ["password_digest", "$2a$10$Wy9ybL98.5ok5cn98YpSv.MVC9k6KZTNIB7wkQThqzRtPPV3hDbv6"]]
+  [1m[35m (66.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-86@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Price Roberts"], ["email", "bobfella-86@gmail.com"], ["created_at", "2018-06-15 14:30:49.342905"], ["updated_at", "2018-06-15 14:30:49.342905"], ["password_digest", "$2a$10$BR/4bx.NKVsDGbaIuxcgE.wxkYvRI1U/jRBk5BdZ835PgXvWKFUHy"]]
+  [1m[35m (65.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-87@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Eudora Waters"], ["email", "bobfella-87@gmail.com"], ["created_at", "2018-06-15 14:30:49.486888"], ["updated_at", "2018-06-15 14:30:49.486888"], ["password_digest", "$2a$10$tzguXz0RpF61E8ZDeTG.ZeThVYGMhotgY1rkFV/rNiw2X5YMh43QO"]]
+  [1m[35m (66.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-88@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Noemie Pagac II"], ["email", "bobfella-88@gmail.com"], ["created_at", "2018-06-15 14:30:49.631020"], ["updated_at", "2018-06-15 14:30:49.631020"], ["password_digest", "$2a$10$yhJw.8Ei2OrpKc1PcPMIZu0ia.X47/vI5uGfkE3M2eNqYp8HKntJq"]]
+  [1m[35m (66.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-89@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Federico Altenwerth"], ["email", "bobfella-89@gmail.com"], ["created_at", "2018-06-15 14:30:49.775634"], ["updated_at", "2018-06-15 14:30:49.775634"], ["password_digest", "$2a$10$k66MH271MI6bwchGRW078eHNEuaS5R4Bv4K.0PbedlAkXNRFg9lRm"]]
+  [1m[35m (65.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-90@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Albertha Bradtke"], ["email", "bobfella-90@gmail.com"], ["created_at", "2018-06-15 14:30:49.919763"], ["updated_at", "2018-06-15 14:30:49.919763"], ["password_digest", "$2a$10$QltALBG.hdYlOQiMZC2qpekY.mbDHEjeNYyAQ6STxd..kpFzYBK76"]]
+  [1m[35m (65.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-91@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Ryleigh Williamson"], ["email", "bobfella-91@gmail.com"], ["created_at", "2018-06-15 14:30:50.063581"], ["updated_at", "2018-06-15 14:30:50.063581"], ["password_digest", "$2a$10$/e63ny5JBic6AzZWGDS.EOQdqtgjSu9jB6x9S95hBsB0l24g5NuJy"]]
+  [1m[35m (66.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-92@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Aryanna Little"], ["email", "bobfella-92@gmail.com"], ["created_at", "2018-06-15 14:30:50.208287"], ["updated_at", "2018-06-15 14:30:50.208287"], ["password_digest", "$2a$10$AdfEJfC8g184I8FNLQsUT.QSIxhm5y2dl/O4VYLWKJNzk/3gSZVB2"]]
+  [1m[35m (65.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-93@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Greta Becker"], ["email", "bobfella-93@gmail.com"], ["created_at", "2018-06-15 14:30:50.352744"], ["updated_at", "2018-06-15 14:30:50.352744"], ["password_digest", "$2a$10$WZ1CUah5kvZY1xL6C/t.we2EjXZ6jnj4vZmwmOLzIGaVCi3g9vf6y"]]
+  [1m[35m (65.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-94@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Clifford Waters"], ["email", "bobfella-94@gmail.com"], ["created_at", "2018-06-15 14:30:50.496704"], ["updated_at", "2018-06-15 14:30:50.496704"], ["password_digest", "$2a$10$sLU77mwQ11Yt4reD9qMlDuYG5Sd5tjzJtQe5mx3097h2M1Fe48qm2"]]
+  [1m[35m (65.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-95@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Miller Leannon"], ["email", "bobfella-95@gmail.com"], ["created_at", "2018-06-15 14:30:50.640783"], ["updated_at", "2018-06-15 14:30:50.640783"], ["password_digest", "$2a$10$Smnoqn95mLqa.wIAguDMyOcusAwoKRqFFBVsejD0nRai7QyF9WMuy"]]
+  [1m[35m (88.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-96@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Jovanny King"], ["email", "bobfella-96@gmail.com"], ["created_at", "2018-06-15 14:30:50.806920"], ["updated_at", "2018-06-15 14:30:50.806920"], ["password_digest", "$2a$10$YhMtiKNq5toq76dzgvLsIui/ncQFH32t3McXE6YiXksKD2UWIkW62"]]
+  [1m[35m (66.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-97@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Walton Monahan"], ["email", "bobfella-97@gmail.com"], ["created_at", "2018-06-15 14:30:50.951480"], ["updated_at", "2018-06-15 14:30:50.951480"], ["password_digest", "$2a$10$MgqlA2IFvBEyp.chtNBvceb7Jd7g6tyJCMhwIgrr8LX0OhAQzo3yK"]]
+  [1m[35m (66.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-98@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Lillian Schiller Jr."], ["email", "bobfella-98@gmail.com"], ["created_at", "2018-06-15 14:30:51.109433"], ["updated_at", "2018-06-15 14:30:51.109433"], ["password_digest", "$2a$10$KWgS2hSe60OelBQWy1Ea8Oh/vYiDxXzWnfhg2YA4y2GN9rkTSIzgq"]]
+  [1m[35m (85.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "bobfella-99@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "Sylvia Crooks"], ["email", "bobfella-99@gmail.com"], ["created_at", "2018-06-15 14:30:51.273329"], ["updated_at", "2018-06-15 14:30:51.273329"], ["password_digest", "$2a$10$RKGrnMgV8M57YV/m912B5e8RTTIFsx6sxeMAowDXLFtzM6iQUfkN2"]]
+  [1m[35m (65.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-06-15 11:31:09 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (559.8ms)
+Completed 200 OK in 620ms (Views: 612.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-15 11:31:20 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_error_messages.html.haml (2.0ms)
+  Rendered users/_form.html.haml (6.9ms)
+  Rendered users/new.html.haml within layouts/application (13.2ms)
+Completed 200 OK in 51ms (Views: 38.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-15 11:31:32 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"24oe/iYbQcwTOOdndrPwVGCBYyrOS5K5Qjjm/u+HOqSueMc+bo/hX5v1iW6rnp3VlKL6UJ/frqxx8+S4h4bd4Q==", "user"=>{"login"=>"fritz", "email"=>"fritz@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "fritz@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("login", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["login", "fritz"], ["email", "fritz@gmail.com"], ["created_at", "2018-06-15 14:31:32.669411"], ["updated_at", "2018-06-15 14:31:32.669411"], ["password_digest", "$2a$10$m1rrpJZEcdM3W3cpklk3TubN3kVvrA5HrAJwIiVVDt8vwF6qNJJQW"]]
+  [1m[35m (210.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/101
+Completed 302 Found in 301ms (ActiveRecord: 211.5ms)
+
+
+Started GET "/users/101" for 127.0.0.1 at 2018-06-15 11:31:32 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 63ms (Views: 47.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-15 11:31:37 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (19.1ms)
+Completed 200 OK in 56ms (Views: 51.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-06-15 11:32:12 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-06-15 11:32:23 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/101/edit" for 127.0.0.1 at 2018-06-15 11:32:30 -0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/edit.html.haml within layouts/application
+  Rendered shared/_error_messages.html.haml (3.8ms)
+  Rendered users/_form.html.haml (9.8ms)
+  Rendered users/edit.html.haml within layouts/application (16.1ms)
+Completed 200 OK in 53ms (Views: 49.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2018-06-15 11:32:46 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (8.9ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-15 11:49:53 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (530.0ms)
+Completed 200 OK in 582ms (Views: 575.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-15 11:49:56 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered shared/_error_messages.html.haml (2.1ms)
+  Rendered users/_form.html.haml (6.2ms)
+  Rendered users/new.html.haml within layouts/application (13.8ms)
+Completed 200 OK in 55ms (Views: 43.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-15 11:50:28 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8ILufUC5CqWRrzyIrG+i/tlhk8QgfFdGX1Nmd23fcZWFcDe9CC2qNhliUoFxQs9/LUIKvnHoa1NsmGQxBd6W0A==", "user"=>{"login"=>"fritz", "email"=>"fritz@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "fritz@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered shared/_error_messages.html.haml (2.0ms)
+  Rendered users/_form.html.haml (5.9ms)
+  Rendered users/new.html.haml within layouts/application (11.0ms)
+Completed 200 OK in 137ms (Views: 52.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-15 11:50:48 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ERnbLN1WNGAMK4nFmntqN7cTUXaQkTXg9ny/tRrY+s1f+zvAgmQQJs16tyPGiN+jsFgaaCed3BuSH9WgyTN3g==", "session"=>{"login"=>"fritz", "email"=>"fritz@gmal.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fritz@gmal.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 50ms (Views: 48.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-15 11:51:00 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+dfQg2g7xDndSnlTo3wGkjiHk/BIo2dNlNEzAXtG2gEo7FsA2UcMqMZPPag6D8hEaJq+3DJ/VOp5QL6pLAl0NA==", "session"=>{"login"=>"fritz", "email"=>"fritz@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fritz@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/101
+Completed 302 Found in 88ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/101" for 127.0.0.1 at 2018-06-15 11:51:00 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendered users/show.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-15 11:51:06 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered users/index.html.haml within layouts/application (22.2ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:     %h1 All users
+    25:     = will_paginate
+    26:     %ul.users
+    27:       - @user.each do |user|
+    28:         %li
+    29:           = gravatar_for user, size: 50
+    30:           = link_to user.login, user
+  
+app/views/users/index.html.haml:27:in `_app_views_users_index_html_haml___3107116150086037848_70199991583380'
+Started GET "/users" for 127.0.0.1 at 2018-06-15 11:51:46 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  Rendered users/index.html.haml within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (The @users variable appears to be empty. Did you forget to pass the collection object for will_paginate?):
+    22:             %li= link_to "Log in", login_path
+    23:   .container
+    24:     %h1 All users
+    25:     = will_paginate
+    26:     %ul.users
+    27:       - @user.each do |user|
+    28:         %li
+  
+app/views/users/index.html.haml:25:in `_app_views_users_index_html_haml___3107116150086037848_70199979187420'
+Started GET "/users" for 127.0.0.1 at 2018-06-15 11:52:09 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered users/index.html.haml within layouts/application (10.4ms)
+Completed 200 OK in 69ms (Views: 54.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users?page=2" for 127.0.0.1 at 2018-06-15 11:52:21 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 30]]
+  Rendered users/index.html.haml within layouts/application (17.5ms)
+Completed 200 OK in 56ms (Views: 53.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?page=1" for 127.0.0.1 at 2018-06-15 11:52:24 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered users/index.html.haml within layouts/application (13.1ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?page=2" for 127.0.0.1 at 2018-06-15 11:52:26 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 30]]
+  Rendered users/index.html.haml within layouts/application (23.6ms)
+Completed 200 OK in 74ms (Views: 71.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?page=3" for 127.0.0.1 at 2018-06-15 11:52:30 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 60]]
+  Rendered users/index.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?page=4" for 127.0.0.1 at 2018-06-15 11:52:30 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 90]]
+  Rendered users/index.html.haml within layouts/application (13.2ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?page=3" for 127.0.0.1 at 2018-06-15 11:52:32 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  Rendering users/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 60]]
+  Rendered users/index.html.haml within layouts/application (13.5ms)
+Completed 200 OK in 83ms (Views: 79.5ms | ActiveRecord: 0.7ms)
+
+
